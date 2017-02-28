@@ -152,5 +152,10 @@ SignedURL for details.
         // TODO: Handle error.
     }
     fmt.Println(url)
+
+Authentication
+
+See https://godoc.org/cloud.google.com/go to learn more about authorization and
+authentication.
 */
 package storage // import "cloud.google.com/go/storage"

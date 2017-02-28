@@ -311,6 +311,9 @@ mutations, which will all be executed at the end of the transaction:
         return nil
     })
 
+Authentication
 
+See https://godoc.org/cloud.google.com/go to learn more about authorization and
+authentication.
 */
 package spanner // import "cloud.google.com/go/spanner"

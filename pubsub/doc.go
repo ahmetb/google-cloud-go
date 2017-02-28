@@ -111,5 +111,10 @@ process messages, and the redelivery delay if messages fail to be acknowledged
 increases the available time for client code to process messages.  However, if
 the client code neglects to call Message.Done, a large MaxExtension will
 increase the delay before the message is redelivered.
+
+Authentication
+
+See https://godoc.org/cloud.google.com/go to learn more about authorization and
+authentication.
 */
 package pubsub // import "cloud.google.com/go/pubsub"

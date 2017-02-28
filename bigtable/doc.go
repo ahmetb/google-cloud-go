@@ -92,6 +92,12 @@ If a read or write operation encounters a transient error it will be retried unt
 response, an unretryable error or the context deadline is reached. Non-idempotent writes (where
 the timestamp is set to ServerTime) will not be retried. In the case of ReadRows, retried calls
 will not re-scan rows that have already been processed.
+
+Authentication
+
+See https://godoc.org/cloud.google.com/go to learn more about authorization and
+authentication.
+
 */
 package bigtable // import "cloud.google.com/go/bigtable"
 

@@ -286,5 +286,10 @@ Extractor, then optionally configure it, and lastly call its Run method.
     extractor.DisableHeader = true
     job, err = extractor.Run(ctx)
     // Poll the job for completion if desired, as above.
+
+Authentication
+
+See https://godoc.org/cloud.google.com/go to learn more about authorization and
+authentication.
 */
 package bigquery // import "cloud.google.com/go/bigquery"

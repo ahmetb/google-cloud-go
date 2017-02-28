@@ -16,6 +16,11 @@
 //
 // For more information about the API,
 // see https://cloud.google.com/container-engine/docs
+//
+// Authentication
+//
+// See https://godoc.org/cloud.google.com/go to learn more about authorization and
+// authentication.
 package container // import "cloud.google.com/go/container"
 
 import (

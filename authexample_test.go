@@ -21,40 +21,35 @@ import (
 )
 
 func Example_applicationDefaultCredentials() {
-	ctx := context.Background()
-	// Use Google Application Default Credentials to authorize and authenticate the client.
-	// More information about Application Default Credentials and how to enable is at
-	// https://developers.google.com/identity/protocols/application-default-credentials.
+	// Google Application Default Credentials are the recommended way of authorizing
+	// and authenticating.
 	//
-	// This is the recommended way of authorizing and authenticating.
+	// See the following link on how to create and obtain Application Default Credentials:
+	// https://developers.google.com/identity/protocols/application-default-credentials
 	//
-	// Note: The example uses the datastore client, but the same steps apply to
-	// the other client libraries underneath this package.
-	client, err := datastore.NewClient(ctx, "project-id")
+	// In this example, path for the Application Default Credentials will be picked up
+	// form the GOOGLE_APPLICATION_CREDENTIALS environment variable.
+	client, err := datastore.NewClient(context.Background(), "project-id")
 	if err != nil {
 		// TODO: handle error.
 	}
-	// Use the client.
-	_ = client
+	_ = client // Use the client.
 }
 
 func Example_serviceAccountFile() {
 	// Warning: The better way to use service accounts is to set GOOGLE_APPLICATION_CREDENTIALS
-	// and use the Application Default Credentials.
-	ctx := context.Background()
-	// Use a JSON key file associated with a Google service account to
-	// authenticate and authorize.
-	// Go to https://console.developers.google.com/permissions/serviceaccounts to create
-	// and download a service account key for your project.
+	// environment variable and use the Application Default Credentials.
 	//
-	// Note: The example uses the datastore client, but the same steps apply to
+	// Use a JSON key file associated with a Google service account to
+	// authenticate and authorize. Service Accounts can be created and downloaded
+	// from: https://console.developers.google.com/permissions/serviceaccounts
+	//
+	// Note: This example uses the datastore client, but the same steps apply to
 	// the other client libraries underneath this package.
-	client, err := datastore.NewClient(ctx,
-		"project-id",
-		option.WithServiceAccountFile("/path/to/service-account-key.json"))
+	client, err := datastore.NewClient(context.Background(),
+		"project-id", option.WithServiceAccountFile("/path/to/service-account-key.json"))
 	if err != nil {
 		// TODO: handle error.
 	}
-	// Use the client.
-	_ = client
+	_ = client // Use the client.
 }
